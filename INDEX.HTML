@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Generator</title>
+</head>
+
+<body>
+    <script>
+        function generateShape() {
+            let input;
+            do {
+                input = prompt("Please enter a number:");
+            } while (isNaN(input));
+
+            const number = parseInt(input);
+            document.getElementById("output").innerHTML = "Number inputted: " + number + "<br>";
+
+            if (number % 2 !== 0) {
+                for (let i = number; i >= 1; i--) {
+                    for (let j = 1; j <= number; j++) {
+                        document.getElementById("output").innerHTML += i + " ";
+                    }
+                    document.getElementById("output").innerHTML += "<br>";
+                }
+            } else {
+                for (let i = number; i >= 1; i--) {
+                    for (let j = i; j >= 1; j--) {
+                        document.getElementById("output").innerHTML += i + " ";
+                    }
+                    document.getElementById("output").innerHTML += "<br>";
+                }
+            }
+        }
+    </script>
+
+    <h1>Shape Generator</h1>
+    <button onclick="generateShape()">Generate Shape</button>
+    <div id="output"></div>
+</body>
+
+</html>
